@@ -1,0 +1,14 @@
+<article class="github-card user-card" *ngIf="user" >
+  <div class="header user">  </div>
+  <a class="avatar" [href]="'http://api.github.com/users/' + user.login">
+    <img [src]="user.avatar_url" >
+   </a>
+   <div class="content">
+    <ul class="status">
+      <li> <a [href]="'http://github.com/users/' + user.login">  <strong> {{user.public_repos}} </strong>  Respositorios </a> </li>
+      <li> <a [href]="'http://github.com/users/' + user.login + '/followers'">  <strong> {{user.followers}} </strong>  Seguidores </a> </li>
+      <li> <a [href]="'http://github.com/users/' + user.login + '/following'">  <strong> {{user.following}} </strong>  Seguidos </a> </li>
+      <li> <a [href]="'http://gist.github.com/users/' + user.login">  <strong> {{user.public_gists}} </strong>  Gists </a> </li>
+    </ul>
+   </div>
+</article>
