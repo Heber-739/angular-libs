@@ -1,4 +1,4 @@
-# Librería Github User Widget
+# Librería Github User Profile
 
 Muestra la información de un usuario de Github haciendo uso de la librería de la API. La librería está desarrollada en Angular.
 

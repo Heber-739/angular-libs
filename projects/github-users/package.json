@@ -8,5 +8,19 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "keywords": [
+    "github",
+    "api"
+  ],
+  "author": "Heber Duarte",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Heber-739/angular-libs"
+  },
+  "bugs": {
+    "url": "https://github.com/Heber-739/angular-libs/issues"
+  },
+  "homepage": "https://github.com/Heber-739/angular-libs/blob/main/projects/github-users/README.md"
 }
