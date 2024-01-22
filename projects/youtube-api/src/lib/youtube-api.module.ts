@@ -1,5 +1,4 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { YoutubeApiComponent } from './youtube-api.component';
 import { CommonModule } from '@angular/common';
 import { Config } from '../config';
 import { YoutubeApiService } from './youtube-api.service';
@@ -9,7 +8,7 @@ import { VideoPlayerComponent } from './components/VideoPlayer/video-player.comp
 import { CardComponent } from './components/Card/card.component';
 import { PlaylistButtonComponent } from './components/PlaylistButton/playlist-button.component';
 
-const COMPONENTS = [YoutubeApiComponent,VideoPlayerComponent,BannerComponent,CardComponent,PlaylistButtonComponent];
+const COMPONENTS = [VideoPlayerComponent,BannerComponent,CardComponent,PlaylistButtonComponent];
 
 @NgModule({
   declarations: COMPONENTS,
