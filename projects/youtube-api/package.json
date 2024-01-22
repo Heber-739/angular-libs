@@ -1,0 +1,25 @@
+{
+  "name": "youtube-channel-components",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/cdk": "^16.2.12",
+    "@angular/material": "^16.2.12"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+
+  "author": "Heber Duarte",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Heber-739/angular-libs"
+  },
+  "bugs": {
+    "url": "https://github.com/Heber-739/angular-libs/issues"
+  },
+  "homepage": "https://github.com/Heber-739/angular-libs/blob/main/projects/youtube-api/README.md"
+}

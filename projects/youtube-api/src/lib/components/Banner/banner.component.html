@@ -1,0 +1,14 @@
+<article #cont>
+  <ng-container *ngIf="channelInfo">
+    <yta-card
+      *ngIf="showCard"
+      [channelInfo]="channelInfo"
+      [channelId]="channelId"
+    ></yta-card>
+
+    <yta-playlist-button
+      *ngIf="showPlaylist"
+      [channelId]="channelId"
+    ></yta-playlist-button>
+  </ng-container>
+</article>

@@ -1,0 +1,9 @@
+<div *ngIf="channelInfo" class="container">
+  <figure class="figure">
+    <img class="img" [src]="channelInfo.thumbnails.medium.url" />
+  </figure>
+  <div class="text_container">
+    <h1 class="title">{{ channelInfo.title }}</h1>
+    <p class="description">{{ channelInfo.description }}</p>
+  </div>
+</div>

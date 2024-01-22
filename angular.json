@@ -126,6 +126,39 @@
           }
         }
       }
+    },
+    "youtube-api": {
+      "projectType": "library",
+      "root": "projects/youtube-api",
+      "sourceRoot": "projects/youtube-api/src",
+      "prefix": "yta",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/youtube-api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/youtube-api/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/youtube-api/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/youtube-api/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   }
 }

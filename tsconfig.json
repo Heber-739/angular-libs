@@ -10,6 +10,9 @@
     "paths": {
       "githubUsers": [
         "dist/github-users"
+      ],
+      "youtube-api": [
+        "dist/youtube-api"
       ]
     },
     "noPropertyAccessFromIndexSignature": true,

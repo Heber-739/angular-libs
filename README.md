@@ -1,27 +1,191 @@
-# AngularLibs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
+# Componentes para youtube channel
 
-## Development server
+Con esta librería podrás integrar componentes que te ayudaran a visualizar tu canal de youtube:
+- Título, foto y descripción del canal.
+- Listas de reproducción con su información.
+- Videos y su descripción.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Instalación de la librería:
 
-## Build
+```bash
+  npm install youtube-channel-components
+```
+ 
+## API
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Tanto el componente ``VideoPlayerComponent``, como el servicio ``DialogService``, pueden ser usados con solo importar el modulo ``YoutubeApiModule``. Sin embargo, 
+para el consumo de la api de youtube data v3, es requerido la inyección de una apikey mediante ``YoutubeApiModule.setKey()``. Puede seguir la guía en la documentación de la api https://developers.google.com/youtube/v3.
 
-## Running unit tests
+## Componentes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### VideoPlayerComponent
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+``` 
+<yta-video-player src="" ></yta-video-player>
+```
 
-## Further help
+| Propiedad | Tipo     | Descripción                |
+| :-------- | :------- | :------------------------- |
+|  `src` | `string` | **Required**. Id del video |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Ejemplo de uso
+Primer video de youtube: 
+ https://www.youtube.com/watch?v=rdwz7QiG0lk
+```typescript
+import { YoutubeApiModule } from 'youtube-channel-components';
+
+
+@Component({
+  selector: 'example',
+  template: `<yta-video-player src="rdwz7QiG0lk" ></yta-video-player>`,
+  standalone: true,
+  imports: [YoutubeApiModule],
+})
+export class Example {}
+```
+
+#### PlaylistButtonComponent
+
+
+``` 
+<yta-playlist-button channelId="" ></yta-playlist-button>
+```
+
+| Propiedad | Tipo     | Descripción                |
+| :-------- | :------- | :------------------------- |
+|  `channelId` | `string` | **Requerido**. Id del canal |
+
+
+## Ejemplo de uso
+
+```typescript
+import { YoutubeApiModule } from 'youtube-channel-components';
+
+
+@Component({
+  selector: 'example',
+  template: `<yta-playlist-button channelId="My-channel-id"> <yta-playlist-button>`,
+  standalone: true,
+  imports: [YoutubeApiModule.setKey({apiKey:'My-key'})],
+})
+export class Example {}
+```
+
+#### CardComponent
+
+
+``` 
+<yta-card channelId="" ></yta-card>
+```
+
+| Propiedad | Tipo     | Descripción                |
+| :-------- | :------- | :------------------------- |
+|  `channelId` | `string` | **Requerido**. Id del canal |
+
+
+## Ejemplo de uso
+
+```typescript
+import { YoutubeApiModule } from 'youtube-channel-components';
+
+
+@Component({
+  selector: 'example',
+  template: `<yta-card channelId="My-channel-id" ></yta-card>`,
+  standalone: true,
+  imports: [YoutubeApiModule.setKey({apiKey:'My-key'})],
+})
+export class Example {}
+```
+
+#### BannerComponent
+
+
+``` 
+<yta-banner channelId=""></yta-banner>
+```
+
+| Propiedad | Tipo     | Descripción                |
+| :-------- | :------- | :------------------------- |
+|  `channelId` | `string` | **Requerido**. Id del canal |
+|  `card` | `` | Define la visualización del ``CardComponent`` dentro del banner |
+|  `playlistButton` | `` | Define la visualización del ``playlistButton`` dentro del banner |
+|  `background` | `string` | Define el shorthand estilo background del banner.  |
+
+Notese que las propiedades `Card` y `playlistButton` no tienen tipo, por lo que pueden usarse como:
+``
+<yta-banner channelId="" card ></yta-banner>
+`` o ``
+<yta-banner channelId="" card="" ></yta-banner>
+``
+
+## Ejemplo de uso
+
+```typescript
+import { YoutubeApiModule } from 'youtube-channel-components';
+
+
+@Component({
+  selector: 'example',
+  template: `<yta-banner channelId="My-channel-id"
+    card
+    playlistButton
+    background="center/contain url('https://www.youtube.com/img/desktop/yt_1200.png') no-repeat #00000050"
+    > </yta-banner>`,
+  standalone: true,
+  imports: [YoutubeApiModule.setKey({apiKey:'My-key'})],
+})
+export class Example {}
+```
+
+## Services
+
+#### DialogService
+
+Abre un modal para poder reproducir un video, agregando el id como parametro
+
+
+
+## Ejemplo de uso
+
+```typescript
+import { YoutubeApiModule, DialogService } from 'youtube-channel-components';
+
+
+@Component({
+  selector: 'example',
+  template: `<img style="height: auto;width: 100%;"
+    (click)="openVideo('My-video-id')"
+    src="https://www.youtube.com/img/desktop/yt_1200.png">`,
+  standalone: true,
+  imports: [YoutubeApiModule.setKey({apiKey:'My-key'})],
+})
+export class Example {
+
+    constructor( private dialog:DialogService){}
+
+  openVideo(src:string): void {
+    this.dialog.open(src);
+  }
+
+}
+```
+
+
+## Authors
+
+
+- [@Heber-739](https://github.com/Heber-739)
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

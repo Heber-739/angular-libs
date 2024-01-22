@@ -1,0 +1,37 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  padding: 0px 10px;
+  width: 100%;
+}
+.figure {
+  background-color: transparent;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 10px auto 0px;
+  text-align: center;
+  width: 30%;
+}
+.img {
+  border-radius: 50%;
+  height: auto;
+  width: clamp(50px, 60%, 150px);
+}
+.text_container {
+  height: auto;
+  margin: 0 auto;
+  width: 70%;
+}
+.title {
+  margin: 10px auto 1vw;
+  text-align: left;
+  font-size: calc(1rem + 1vw);
+}
+.description {
+  line-height: calc(0.6rem + 1vw);
+  margin: 0 auto 5px;
+  text-align: justify;
+  font-size: calc(0.4rem + 1vw);
+}

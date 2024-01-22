@@ -1,0 +1,56 @@
+<div class="container_playlistButton">
+  <button
+    class="btn_playlistButton"
+    *ngIf="channelId"
+    type="button"
+    (click)="openPlaylist()"
+  >
+    Ver Playlist
+  </button>
+
+  <ng-container *ngIf="currentPlaylist">
+    <section class="curtain">
+      <i class="close" (click)="closeView()">X</i>
+
+      <aside class="aside">
+        <i class="up" (click)="preview()" *ngIf="currentIndex > 0"> < </i>
+        <ng-container *ngFor="let item of currentPlaylist.items">
+          <img
+            [src]="item.snippet.thumbnails.default.url"
+            (click)="select(item)"
+            class="img"
+          />
+        </ng-container>
+        <i
+          class="down"
+          *ngIf="currentIndex < playlists.length - 1"
+          (click)="next()"
+        >
+          >
+        </i>
+      </aside>
+      <article class="playlist_details" *ngIf="playlistSelected">
+        <div class="playlist_descariptions">
+          <h1 class="playlist_title">{{ title }}</h1>
+          <p class="playlist_description" *ngIf="description">
+            {{ description }}
+          </p>
+        </div>
+        <div class="videos_container">
+          <ng-container *ngFor="let item of playlistSelected">
+            <figure class="video_container">
+              <img
+                (click)="openVideo(item.contentDetails.videoId)"
+                class="img"
+                [src]="item.snippet.thumbnails.default.url"
+              />
+              <figcaption class="video_description">
+                {{ item.snippet.description }}
+              </figcaption>
+            </figure>
+          </ng-container>
+        </div>
+      </article>
+    </section>
+  </ng-container>
+</div>
