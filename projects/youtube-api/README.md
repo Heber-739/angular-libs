@@ -1,4 +1,5 @@
 
+
 # Componentes para youtube channel
 
 Con esta librería podrás integrar componentes que te ayudaran a visualizar tu canal de youtube:
@@ -22,12 +23,13 @@ para el consumo de la api de youtube data v3, es requerido la inyección de una 
 
 ## Componentes
 
-#### VideoPlayerComponent
+### VideoPlayerComponent
 
 
 ``` 
 <yta-video-player src="" ></yta-video-player>
 ```
+
 
 | Propiedad | Tipo     | Descripción                |
 | :-------- | :------- | :------------------------- |
@@ -35,7 +37,7 @@ para el consumo de la api de youtube data v3, es requerido la inyección de una 
 
 
 
-## Ejemplo de uso
+### Ejemplo de uso
 Primer video de youtube: 
  https://www.youtube.com/watch?v=rdwz7QiG0lk
 ```typescript
@@ -51,7 +53,7 @@ import { YoutubeApiModule } from 'youtube-channel-components';
 export class Example {}
 ```
 
-#### PlaylistButtonComponent
+### PlaylistButtonComponent
 
 
 ``` 
@@ -63,7 +65,7 @@ export class Example {}
 |  `channelId` | `string` | **Requerido**. Id del canal |
 
 
-## Ejemplo de uso
+### Ejemplo de uso
 
 ```typescript
 import { YoutubeApiModule } from 'youtube-channel-components';
@@ -78,7 +80,7 @@ import { YoutubeApiModule } from 'youtube-channel-components';
 export class Example {}
 ```
 
-#### CardComponent
+### CardComponent
 
 
 ``` 
@@ -90,7 +92,7 @@ export class Example {}
 |  `channelId` | `string` | **Requerido**. Id del canal |
 
 
-## Ejemplo de uso
+### Ejemplo de uso
 
 ```typescript
 import { YoutubeApiModule } from 'youtube-channel-components';
@@ -105,7 +107,7 @@ import { YoutubeApiModule } from 'youtube-channel-components';
 export class Example {}
 ```
 
-#### BannerComponent
+### BannerComponent
 
 
 ``` 
@@ -119,14 +121,14 @@ export class Example {}
 |  `playlistButton` | `` | Define la visualización del ``playlistButton`` dentro del banner |
 |  `background` | `string` | Define el shorthand estilo background del banner.  |
 
-Notese que las propiedades `Card` y `playlistButton` no tienen tipo, por lo que pueden usarse como:
+Notese que las propiedades ``Card`` y ``playlistButton`` no tienen tipo, por lo que pueden usarse como:
 ``
 <yta-banner channelId="" card ></yta-banner>
 `` o ``
 <yta-banner channelId="" card="" ></yta-banner>
 ``
 
-## Ejemplo de uso
+### Ejemplo de uso
 
 ```typescript
 import { YoutubeApiModule } from 'youtube-channel-components';
@@ -147,13 +149,13 @@ export class Example {}
 
 ## Services
 
-#### DialogService
+### DialogService
 
 Abre un modal para poder reproducir un video, agregando el id como parametro
 
 
 
-## Ejemplo de uso
+### Ejemplo de uso
 
 ```typescript
 import { YoutubeApiModule, DialogService } from 'youtube-channel-components';
@@ -179,13 +181,13 @@ export class Example {
 ```
 
 
-## Authors
+## Autor
 
 
 - [@Heber-739](https://github.com/Heber-739)
 
 
 
-## License
+## Licencia
 
 [MIT](https://choosealicense.com/licenses/mit/)

@@ -1,6 +1,6 @@
 {
   "name": "youtube-channel-components",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0",
@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/Heber-739/angular-libs/issues"
   },
-  "homepage": "https://github.com/Heber-739/angular-libs/blob/main/projects/youtube-api/README.md"
+  "homepage": "https://github.com/Heber-739/angular-libs/blob/main/projects/youtube-api/README.md",
+  "keywords": [
+    "angular",
+    "youtube",
+    "api",
+    "channel",
+    "playlist",
+    "widget"
+  ]
 }

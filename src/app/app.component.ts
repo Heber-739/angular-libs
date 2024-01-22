@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Snippet } from 'projects/youtube-api/src/lib/interfaces/ChannelResponse';
-import { DialogService, YoutubeApiService } from 'projects/youtube-api/src/public-api';
+import { DialogService } from 'youtube-channel-components';
 
 @Component({
   selector: 'app-root',
